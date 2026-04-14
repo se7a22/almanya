@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الشركة الألمانية لمكافحة الحشرات في مصر</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --green:#006633;
+  --green2:#00883f;
+  --green3:#e6f5ec;
+  --gold:#f5b800;
+  --gold2:#ffd740;
+  --dark:#0d1f0f;
+  --gray:#f4f7f5;
+  --text:#1a2e1d;
+  --white:#fff;
+  --shadow:0 4px 24px rgba(0,102,51,0.12);
+  --radius:14px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Tajawal',sans-serif;color:var(--text);background:#fff;overflow-x:hidden}
+
+/* ===== NAVBAR ===== */
+nav{position:fixed;top:0;width:100%;z-index:1000;background:rgba(13,31,15,0.95);backdrop-filter:blur(12px);border-bottom:2px solid var(--gold);transition:all .3s}
+nav.scrolled{background:rgba(0,102,51,0.97)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:70px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo-icon{width:44px;height:44px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px}
+.logo-text{color:#fff;font-size:18px;font-weight:800;line-height:1.2}
+.logo-text span{color:var(--gold);display:block;font-size:12px;font-weight:400}
+.nav-links{display:flex;gap:6px;list-style:none}
+.nav-links a{color:#fff;text-decoration:none;font-size:15px;font-weight:500;padding:8px 16px;border-radius:8px;transition:all .3s;white-space:nowrap}
+.nav-links a:hover,.nav-links a.active{background:var(--gold);color:var(--dark)}
+.nav-phone{background:var(--gold);color:var(--dark)!important;font-weight:700;border-radius:8px;padding:8px 16px;animation:phonePulse 2s infinite}
+@keyframes phonePulse{0%,100%{box-shadow:0 0 0 0 rgba(245,184,0,0.5)}50%{box-shadow:0 0 0 8px rgba(245,184,0,0)}}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}
+.hamburger span{display:block;width:25px;height:2px;background:#fff;transition:.3s}
+
+/* ===== HERO ===== */
+#hero{height:100vh;background:linear-gradient(135deg,#0d1f0f 0%,#003d1f 40%,#006633 100%);position:relative;overflow:hidden;display:flex;align-items:center}
+.particles{position:absolute;inset:0;pointer-events:none}
+.particle{position:absolute;background:rgba(245,184,0,0.15);border-radius:50%;animation:float linear infinite}
+@keyframes float{0%{transform:translateY(100vh) rotate(0deg);opacity:0}10%{opacity:1}90%{opacity:1}100%{transform:translateY(-100px) rotate(720deg);opacity:0}}
+.hero-content{max-width:1200px;margin:0 auto;padding:0 20px;position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.hero-badge{display:inline-block;background:rgba(245,184,0,0.2);border:1px solid var(--gold);color:var(--gold);padding:6px 18px;border-radius:30px;font-size:13px;margin-bottom:16px;animation:fadeInDown .8s ease}
+@keyframes fadeInDown{from{opacity:0;transform:translateY(-20px)}to{opacity:1;transform:translateY(0)}}
+.hero-title{font-size:clamp(28px,4vw,52px);font-weight:900;color:#fff;line-height:1.25;margin-bottom:20px;animation:fadeInRight .8s ease .2s both}
+.hero-title .highlight{color:var(--gold);display:block}
+@keyframes fadeInRight{from{opacity:0;transform:translateX(30px)}to{opacity:1;transform:translateX(0)}}
+.hero-desc{color:rgba(255,255,255,0.8);font-size:16px;line-height:1.8;margin-bottom:30px;animation:fadeInRight .8s ease .4s both}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;animation:fadeInRight .8s ease .6s both}
+.btn-gold{background:var(--gold);color:var(--dark);padding:14px 28px;border-radius:10px;font-size:16px;font-weight:700;text-decoration:none;transition:all .3s;display:inline-flex;align-items:center;gap:8px;border:none;cursor:pointer}
+.btn-gold:hover{background:var(--gold2);transform:translateY(-2px);box-shadow:0 8px 24px rgba(245,184,0,0.4)}
+.btn-outline{background:transparent;color:#fff;padding:14px 28px;border-radius:10px;font-size:16px;font-weight:700;text-decoration:none;transition:all .3s;display:inline-flex;align-items:center;gap:8px;border:2px solid rgba(255,255,255,0.4);cursor:pointer}
+.btn-outline:hover{background:rgba(255,255,255,0.1);border-color:#fff}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px;animation:fadeInRight .8s ease .8s both}
+.stat-box{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:12px;padding:16px;text-align:center}
+.stat-num{font-size:28px;font-weight:900;color:var(--gold)}
+.stat-label{color:rgba(255,255,255,0.7);font-size:13px;margin-top:4px}
+.hero-image{position:relative;animation:fadeInLeft .8s ease .4s both}
+@keyframes fadeInLeft{from{opacity:0;transform:translateX(-30px)}to{opacity:1;transform:translateX(0)}}
+.hero-img-wrap{position:relative;border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.4)}
+.hero-img-wrap img{width:100%;height:420px;object-fit:cover}
+.hero-img-badge{position:absolute;bottom:20px;right:20px;background:var(--gold);color:var(--dark);padding:12px 20px;border-radius:12px;font-weight:700;font-size:14px;display:flex;align-items:center;gap:8px}
+.hero-scroll{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:rgba(255,255,255,0.6);font-size:13px;animation:bounce 2s infinite}
+@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
+.scroll-arrow{width:24px;height:24px;border-right:2px solid rgba(255,255,255,0.5);border-bottom:2px solid rgba(255,255,255,0.5);transform:rotate(45deg)}
+
+/* ===== SECTIONS ===== */
+section{padding:80px 20px}
+.container{max-width:1200px;margin:0 auto}
+.section-label{display:inline-block;background:var(--green3);color:var(--green);padding:6px 18px;border-radius:30px;font-size:13px;font-weight:600;margin-bottom:12px}
+.section-title{font-size:clamp(24px,3vw,38px);font-weight:800;color:var(--dark);margin-bottom:12px;line-height:1.3}
+.section-desc{color:#5a7060;font-size:16px;line-height:1.8;max-width:600px}
+.section-head{text-align:center;margin-bottom:50px}
+.section-head .section-desc{margin:0 auto}
+
+/* ===== WHY US ===== */
+#why{background:var(--gray)}
+.features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px}
+.feature-card{background:#fff;border-radius:var(--radius);padding:28px;border:1px solid rgba(0,102,51,0.1);transition:all .3s;position:relative;overflow:hidden}
+.feature-card::before{content:'';position:absolute;top:0;right:0;width:4px;height:0;background:var(--gold);transition:height .3s}
+.feature-card:hover{box-shadow:var(--shadow);transform:translateY(-4px)}
+.feature-card:hover::before{height:100%}
+.feature-icon{width:56px;height:56px;background:var(--green3);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:16px}
+.feature-title{font-size:17px;font-weight:700;color:var(--dark);margin-bottom:8px}
+.feature-desc{color:#5a7060;font-size:14px;line-height:1.7}
+
+/* ===== SERVICES ===== */
+#services{}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:24px}
+.service-card{background:#fff;border-radius:var(--radius);overflow:hidden;border:1px solid rgba(0,102,51,0.1);transition:all .3s;cursor:pointer;box-shadow:0 2px 12px rgba(0,0,0,0.05)}
+.service-card:hover{box-shadow:0 12px 40px rgba(0,102,51,0.15);transform:translateY(-5px)}
+.service-img{width:100%;height:190px;object-fit:cover;transition:transform .4s}
+.service-card:hover .service-img{transform:scale(1.05)}
+.service-body{padding:20px}
+.service-icon{width:42px;height:42px;background:var(--green);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:12px;color:#fff}
+.service-name{font-size:18px;font-weight:700;color:var(--dark);margin-bottom:8px}
+.service-desc{color:#5a7060;font-size:13px;line-height:1.7;margin-bottom:16px}
+.service-btn{display:inline-flex;align-items:center;gap:6px;color:var(--green);font-size:14px;font-weight:600;border:none;background:none;cursor:pointer;padding:8px 0;transition:color .3s}
+.service-btn:hover{color:var(--gold)}
+
+/* ===== PEST PAGE ===== */
+.page-overlay{display:none;position:fixed;inset:0;z-index:2000;background:#fff;overflow-y:auto;animation:slideIn .3s ease}
+@keyframes slideIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.page-overlay.active{display:block}
+.page-nav{background:var(--dark);padding:16px 20px;display:flex;align-items:center;gap:16px;position:sticky;top:0;z-index:100}
+.back-btn{background:var(--gold);color:var(--dark);border:none;padding:10px 20px;border-radius:8px;font-size:15px;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:8px;font-family:'Tajawal',sans-serif}
+.back-btn:hover{background:var(--gold2)}
+.page-nav-title{color:#fff;font-size:18px;font-weight:700}
+.pest-hero{position:relative;height:350px;overflow:hidden}
+.pest-hero img{width:100%;height:100%;object-fit:cover}
+.pest-hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(13,31,15,.85) 0%,rgba(0,102,51,.3) 100%)}
+.pest-hero-content{position:absolute;bottom:30px;right:30px;color:#fff}
+.pest-hero-title{font-size:36px;font-weight:900;margin-bottom:8px}
+.pest-hero-sub{color:rgba(255,255,255,0.8);font-size:16px}
+.pest-content{max-width:900px;margin:0 auto;padding:40px 20px}
+.pest-section-title{font-size:22px;font-weight:800;color:var(--dark);margin-bottom:16px;padding-bottom:12px;border-bottom:3px solid var(--gold);display:inline-block}
+.pest-intro{font-size:16px;line-height:1.9;color:#3a5040;margin-bottom:40px;background:var(--green3);padding:20px 24px;border-radius:12px;border-right:4px solid var(--green)}
+.danger-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;margin-bottom:40px}
+.danger-item{background:#fff2f2;border:1px solid #ffd0d0;border-radius:10px;padding:16px;display:flex;gap:12px;align-items:flex-start}
+.danger-icon{font-size:24px;flex-shrink:0}
+.danger-text{font-size:14px;color:#6b1a1a;line-height:1.6}
+.signs-list{list-style:none;margin-bottom:40px}
+.signs-list li{display:flex;gap:12px;align-items:flex-start;padding:14px 0;border-bottom:1px solid #e8f0ea}
+.signs-list li::before{content:'✓';background:var(--green);color:#fff;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0;font-weight:700}
+.pest-cta{background:linear-gradient(135deg,var(--dark),var(--green));border-radius:16px;padding:36px;text-align:center;color:#fff;margin-top:20px}
+.pest-cta h3{font-size:24px;font-weight:800;margin-bottom:12px}
+.pest-cta p{color:rgba(255,255,255,0.8);margin-bottom:24px;font-size:15px}
+.cta-phone{background:var(--gold);color:var(--dark);font-size:22px;font-weight:900;padding:16px 36px;border-radius:12px;display:inline-flex;align-items:center;gap:10px;text-decoration:none;animation:phonePulse 2s infinite;margin-bottom:12px}
+.cta-phone:hover{background:var(--gold2)}
+
+/* ===== ARTICLES ===== */
+#articles{background:var(--gray)}
+.articles-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:28px}
+.article-card{background:#fff;border-radius:var(--radius);overflow:hidden;border:1px solid rgba(0,102,51,0.1);transition:all .3s}
+.article-card:hover{box-shadow:var(--shadow);transform:translateY(-4px)}
+.article-img{width:100%;height:200px;object-fit:cover}
+.article-body{padding:22px}
+.article-tag{background:var(--green3);color:var(--green);padding:4px 12px;border-radius:20px;font-size:12px;font-weight:600;margin-bottom:12px;display:inline-block}
+.article-title{font-size:17px;font-weight:700;color:var(--dark);margin-bottom:10px;line-height:1.5;cursor:pointer;transition:color .3s}
+.article-title:hover{color:var(--green)}
+.article-meta{color:#7a9080;font-size:13px;display:flex;gap:16px;margin-top:14px}
+
+/* ===== CONTACT ===== */
+#contact{background:linear-gradient(135deg,var(--dark) 0%,#003d1f 60%,#006633 100%);color:#fff}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.contact-info h2{font-size:32px;font-weight:800;margin-bottom:16px}
+.contact-info p{color:rgba(255,255,255,0.75);font-size:15px;line-height:1.8;margin-bottom:32px}
+.phone-showcase{background:rgba(255,255,255,0.07);border:2px solid var(--gold);border-radius:16px;padding:28px;text-align:center;position:relative;overflow:hidden;margin-bottom:24px}
+.phone-showcase::before{content:'';position:absolute;inset:-2px;border-radius:16px;background:linear-gradient(45deg,var(--gold),transparent,var(--gold));animation:rotateBorder 3s linear infinite;z-index:-1}
+@keyframes rotateBorder{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+.phone-label{color:rgba(255,255,255,0.6);font-size:14px;margin-bottom:8px}
+.phone-number{font-size:32px;font-weight:900;color:var(--gold);letter-spacing:2px;display:flex;align-items:center;justify-content:center;gap:10px}
+.phone-number a{color:var(--gold);text-decoration:none}
+.phone-number a:hover{color:var(--gold2)}
+.phone-ring{width:20px;height:20px;border:3px solid var(--gold);border-radius:50%;animation:ring 1.5s ease infinite}
+@keyframes ring{0%{transform:scale(1);opacity:1}100%{transform:scale(2.5);opacity:0}}
+.contact-items{display:flex;flex-direction:column;gap:16px}
+.contact-item{display:flex;gap:14px;align-items:center}
+.contact-item-icon{width:44px;height:44px;background:rgba(245,184,0,0.15);border:1px solid rgba(245,184,0,0.3);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.contact-item-text{color:rgba(255,255,255,0.8);font-size:15px}
+.contact-item-text strong{color:#fff;display:block;margin-bottom:2px}
+.contact-form{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:32px}
+.form-title{font-size:20px;font-weight:700;margin-bottom:24px;color:var(--gold)}
+.form-group{margin-bottom:18px}
+.form-group label{display:block;color:rgba(255,255,255,0.8);font-size:14px;margin-bottom:8px;font-weight:500}
+.form-group input,.form-group select,.form-group textarea{width:100%;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.2);border-radius:10px;padding:13px 16px;color:#fff;font-size:15px;font-family:'Tajawal',sans-serif;transition:border .3s;direction:rtl}
+.form-group input::placeholder,.form-group textarea::placeholder{color:rgba(255,255,255,0.4)}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--gold)}
+.form-group select option{background:var(--dark);color:#fff}
+.form-group textarea{height:120px;resize:vertical}
+.submit-btn{width:100%;background:var(--gold);color:var(--dark);border:none;padding:15px;border-radius:10px;font-size:16px;font-weight:700;cursor:pointer;font-family:'Tajawal',sans-serif;transition:all .3s;display:flex;align-items:center;justify-content:center;gap:8px}
+.submit-btn:hover{background:var(--gold2);transform:translateY(-2px)}
+.success-msg{display:none;background:rgba(0,136,63,0.3);border:1px solid var(--green2);color:#90ffc0;padding:14px;border-radius:10px;text-align:center;margin-top:12px;font-size:15px}
+
+/* ===== FOOTER ===== */
+footer{background:#060e07;color:rgba(255,255,255,0.7);padding:40px 20px 20px}
+.footer-inner{max-width:1200px;margin:0 auto}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:36px}
+.footer-brand .logo{margin-bottom:14px}
+.footer-brand p{font-size:14px;line-height:1.8}
+.footer-col h4{color:#fff;font-size:16px;font-weight:700;margin-bottom:16px}
+.footer-col ul{list-style:none}
+.footer-col ul li{margin-bottom:10px}
+.footer-col ul li a{color:rgba(255,255,255,0.6);text-decoration:none;font-size:14px;transition:color .3s;display:flex;align-items:center;gap:6px}
+.footer-col ul li a:hover{color:var(--gold)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding-top:20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:gap}
+.footer-bottom p{font-size:13px}
+.footer-bottom span{color:var(--gold)}
+
+/* ===== FLOATING PHONE ===== */
+.float-phone{position:fixed;bottom:28px;left:28px;z-index:999;display:flex;flex-direction:column;align-items:center;gap:8px}
+.float-btn{background:var(--green);color:#fff;width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;text-decoration:none;box-shadow:0 4px 20px rgba(0,102,51,0.5);animation:floatPulse 2s infinite;transition:all .3s}
+.float-btn:hover{background:var(--green2);transform:scale(1.1)}
+.float-wa{background:#25d366}
+.float-wa:hover{background:#20bc5a}
+@keyframes floatPulse{0%,100%{box-shadow:0 4px 20px rgba(0,102,51,0.5)}50%{box-shadow:0 4px 32px rgba(0,102,51,0.8)}}
+
+/* ===== PROCESS ===== */
+#process{}
+.process-steps{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:0;position:relative}
+.process-steps::before{content:'';position:absolute;top:40px;right:10%;left:10%;height:2px;background:linear-gradient(to left,var(--green3),var(--green),var(--green3));z-index:0}
+.step{text-align:center;position:relative;z-index:1;padding:0 10px}
+.step-num{width:80px;height:80px;background:#fff;border:3px solid var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:28px;font-weight:900;color:var(--green);box-shadow:0 4px 20px rgba(0,102,51,0.2);transition:all .3s}
+.step:hover .step-num{background:var(--green);color:#fff;transform:scale(1.1)}
+.step-title{font-size:16px;font-weight:700;color:var(--dark);margin-bottom:8px}
+.step-desc{font-size:13px;color:#5a7060;line-height:1.6}
+
+/* ===== TESTIMONIALS ===== */
+#testimonials{background:var(--gray)}
+.test-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px}
+.test-card{background:#fff;border-radius:var(--radius);padding:24px;border:1px solid rgba(0,102,51,0.1);position:relative;transition:all .3s}
+.test-card:hover{box-shadow:var(--shadow);transform:translateY(-3px)}
+.test-quote{font-size:40px;color:var(--gold);line-height:1;margin-bottom:8px}
+.test-text{color:#4a6450;font-size:15px;line-height:1.8;margin-bottom:18px}
+.test-author{display:flex;align-items:center;gap:12px}
+.test-avatar{width:46px;height:46px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:18px}
+.test-name{font-weight:700;color:var(--dark);font-size:15px}
+.test-loc{color:#7a9080;font-size:13px}
+.stars{color:var(--gold);font-size:14px;margin-bottom:4px}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+.hero-content{grid-template-columns:1fr}
+.hero-image{display:none}
+.contact-grid{grid-template-columns:1fr}
+.footer-grid{grid-template-columns:1fr 1fr}
+.process-steps::before{display:none}
+}
+@media(max-width:650px){
+.nav-links{display:none;position:absolute;top:70px;right:0;left:0;background:var(--dark);flex-direction:column;padding:16px 20px;gap:4px;border-bottom:2px solid var(--gold)}
+.nav-links.open{display:flex}
+.hamburger{display:flex}
+.footer-grid{grid-template-columns:1fr}
+.hero-stats{grid-template-columns:repeat(3,1fr)}
+}
+</style>
+</head>
+<body>
+
+<!-- FLOATING PHONE BUTTONS -->
+<div class="float-phone">
+  <a href="https://wa.me/201110525233" class="float-btn float-wa" title="واتساب">💬</a>
+  <a href="tel:01110525233" class="float-btn" title="اتصل بنا">📞</a>
+</div>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#hero" class="logo" onclick="closePage()">
+      <div class="logo-icon">🐛</div>
+      <div class="logo-text">الشركة الألمانية<span>لمكافحة الحشرات في مصر</span></div>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#hero" onclick="closePage();closeMenu()">الرئيسية</a></li>
+      <li><a href="#services" onclick="closePage();closeMenu()">الخدمات</a></li>
+      <li><a href="#process" onclick="closePage();closeMenu()">كيف نعمل</a></li>
+      <li><a href="#articles" onclick="closePage();closeMenu()">المقالات</a></li>
+      <li><a href="#contact" onclick="closePage();closeMenu()">اتصل بنا</a></li>
+      <li><a href="tel:01110525233" class="nav-phone">📞 01110525233</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="particles" id="particles"></div>
+  <div class="hero-content">
+    <div class="hero-text">
+      <div class="hero-badge">🇩🇪 خبرة ألمانية • جودة عالمية</div>
+      <h1 class="hero-title">
+        نهاية نهائية
+        <span class="highlight">لكل الحشرات</span>
+        في مصر
+      </h1>
+      <p class="hero-desc">الشركة الألمانية — الرائدة في مكافحة الحشرات والقوارض بأحدث التقنيات الألمانية ومبيدات مرخصة وآمنة. نضمن لك بيئة نظيفة وصحية 100%.</p>
+      <div class="hero-btns">
+        <a href="tel:01110525233" class="btn-gold">📞 اتصل الآن مجاناً</a>
+        <a href="#services" class="btn-outline">🔍 اكتشف خدماتنا</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-box"><div class="stat-num">+15</div><div class="stat-label">سنة خبرة</div></div>
+        <div class="stat-box"><div class="stat-num">+5000</div><div class="stat-label">عميل راضٍ</div></div>
+        <div class="stat-box"><div class="stat-num">100%</div><div class="stat-label">ضمان النتيجة</div></div>
+      </div>
+    </div>
+    <div class="hero-image">
+      <div class="hero-img-wrap">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="فريق مكافحة الحشرات" loading="lazy">
+        <div class="hero-img-badge">🛡️ معتمدون من وزارة الصحة</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll"><div class="scroll-arrow"></div>اكتشف المزيد</div>
+</section>
+
+<!-- WHY US -->
+<section id="why">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-label">لماذا نحن؟</div>
+      <h2 class="section-title">الشركة الألمانية — الخيار الأول في مصر</h2>
+      <p class="section-desc">نجمع بين الخبرة الألمانية والمعرفة المحلية لنقدم لك أفضل حلول مكافحة الحشرات</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🔬</div>
+        <div class="feature-title">مبيدات ألمانية معتمدة</div>
+        <div class="feature-desc">نستخدم حصرياً مبيدات مستوردة من ألمانيا معتمدة من وزارة الصحة المصرية، آمنة تماماً على الإنسان والحيوانات الأليفة.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">⚡</div>
+        <div class="feature-title">استجابة فورية 24/7</div>
+        <div class="feature-desc">فريقنا متاح على مدار الساعة طوال أيام الأسبوع. نصل إليك خلال ساعات قليلة من اتصالك.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🛡️</div>
+        <div class="feature-title">ضمان شامل</div>
+        <div class="feature-desc">نقدم ضماناً على جميع خدماتنا. إذا عادت الحشرات خلال فترة الضمان، نعاود المعالجة مجاناً.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">👷</div>
+        <div class="feature-title">فريق متخصص ومدرب</div>
+        <div class="feature-desc">جميع فنيينا مدربون على أعلى مستوى ومرخصون من الجهات الحكومية في مجال مكافحة الآفات.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🌿</div>
+        <div class="feature-title">صديق للبيئة</div>
+        <div class="feature-desc">نلتزم باستخدام مواد بيئية ومبيدات معتمدة لا تضر بالبيئة أو الأطفال أو الحيوانات الأليفة.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">💰</div>
+        <div class="feature-title">أسعار تنافسية</div>
+        <div class="feature-desc">نقدم أفضل جودة بأسعار مناسبة لجميع فئات العملاء — المنازل والشركات والمصانع والمطاعم.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-label">خدماتنا</div>
+      <h2 class="section-title">مكافحة شاملة لكل الحشرات</h2>
+      <p class="section-desc">نتعامل مع جميع أنواع الحشرات والقوارض في مصر بأحدث الأساليب العلمية</p>
+    </div>
+    <div class="services-grid" id="servicesGrid"></div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-label">آلية العمل</div>
+      <h2 class="section-title">كيف نحل مشكلتك في 4 خطوات</h2>
+      <p class="section-desc">نتبع منهجية علمية دقيقة لضمان القضاء الكامل والنهائي على الحشرات</p>
+    </div>
+    <div class="process-steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-title">🔍 الكشف والتحليل</div>
+        <div class="step-desc">يزورك فنيّ متخصص لتحديد نوع الحشرة ومصدرها وحجم الانتشار</div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-title">📋 خطة العلاج</div>
+        <div class="step-desc">نضع خطة علاجية مخصصة لحالتك مع تحديد المبيدات الأنسب</div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-title">💊 التنفيذ الاحترافي</div>
+        <div class="step-desc">تنفيذ العملية بأحدث الأجهزة والمبيدات الألمانية المعتمدة بشكل آمن</div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-title">✅ المتابعة والضمان</div>
+        <div class="step-desc">متابعة دورية للتأكد من النتائج وضمان عدم عودة الحشرات</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLES -->
+<section id="articles">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-label">المقالات</div>
+      <h2 class="section-title">نصائح ومعلومات مفيدة</h2>
+      <p class="section-desc">مقالات متخصصة لمساعدتك في الوقاية والتعامل مع الحشرات</p>
+    </div>
+    <div class="articles-grid">
+      <div class="article-card">
+        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=500&q=80" alt="تنظيف المنزل" class="article-img" loading="lazy">
+        <div class="article-body">
+          <span class="article-tag">نصائح وقائية</span>
+          <div class="article-title" onclick="openArticle('article1')">10 طرق فعالة للوقاية من الحشرات في المنزل</div>
+          <p style="font-size:13px;color:#5a7060;line-height:1.7">اكتشف أسرار الوقاية من الحشرات وكيف تحافظ على بيتك نظيفاً وآمناً طوال العام بأساليب بسيطة ومجربة.</p>
+          <div class="article-meta"><span>📅 أبريل 2025</span><span>⏱️ 5 دقائق</span></div>
+        </div>
+      </div>
+      <div class="article-card">
+        <img src="https://images.unsplash.com/photo-1606676539940-927b10616440?w=500&q=80" alt="صراصير" class="article-img" loading="lazy">
+        <div class="article-body">
+          <span class="article-tag">معلومات</span>
+          <div class="article-title" onclick="openArticle('article2')">الصراصير: 50 مرض تنقلها وكيف تتخلص منها نهائياً</div>
+          <p style="font-size:13px;color:#5a7060;line-height:1.7">الصراصير ليست مجرد مزعجة — هي خطر حقيقي على صحة أسرتك. تعرف على المخاطر وطرق الإبادة الفعالة.</p>
+          <div class="article-meta"><span>📅 مارس 2025</span><span>⏱️ 7 دقائق</span></div>
+        </div>
+      </div>
+      <div class="article-card">
+        <img src="https://images.unsplash.com/photo-1563906267088-b029e7101114?w=500&q=80" alt="مبيدات" class="article-img" loading="lazy">
+        <div class="article-body">
+          <span class="article-tag">علم ومعرفة</span>
+          <div class="article-title" onclick="openArticle('article3')">الفرق بين المبيدات الكيميائية والعضوية في مكافحة الحشرات</div>
+          <p style="font-size:13px;color:#5a7060;line-height:1.7">كل ما تريد معرفته عن أنواع المبيدات المستخدمة في مكافحة الحشرات وأيها أكثر أماناً لأسرتك.</p>
+          <div class="article-meta"><span>📅 فبراير 2025</span><span>⏱️ 6 دقائق</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-label">آراء العملاء</div>
+      <h2 class="section-title">ماذا يقول عملاؤنا؟</h2>
+      <p class="section-desc">آلاف العملاء السعداء في جميع أنحاء مصر يثقون في الشركة الألمانية</p>
+    </div>
+    <div class="test-grid">
+      <div class="test-card">
+        <div class="test-quote">"</div>
+        <div class="stars">★★★★★</div>
+        <div class="test-text">عندي مشكلة صراصير من سنتين وجربت شركات كتير بدون فايدة. الشركة الألمانية جت وحلت المشكلة في يوم واحد والأسعار معقولة جداً. شكراً جزيلاً!</div>
+        <div class="test-author"><div class="test-avatar">أ</div><div><div class="test-name">أحمد محمد السيد</div><div class="test-loc">القاهرة — مدينة نصر</div></div></div>
+      </div>
+      <div class="test-card">
+        <div class="test-quote">"</div>
+        <div class="stars">★★★★★</div>
+        <div class="test-text">مطعمنا كان بيه مشكلة بق الفراش في الأوضة. الشركة الألمانية تعاملت بسرية ومهنية عالية والمكان بقى نضيف تماماً. أنصح بيهم بشدة.</div>
+        <div class="test-author"><div class="test-avatar">م</div><div><div class="test-name">محمود رضا</div><div class="test-loc">الجيزة — المهندسين</div></div></div>
+      </div>
+      <div class="test-card">
+        <div class="test-quote">"</div>
+        <div class="stars">★★★★★</div>
+        <div class="test-text">فيلتنا كانت بيها نمل أبيض في الخشب. الفريق جه وعمل معاينة مجانية وقدم حل شامل بضمان سنة. الشغل محترم والفريق محترم.</div>
+        <div class="test-author"><div class="test-avatar">ن</div><div><div class="test-name">نادية عبد الرحمن</div><div class="test-loc">الإسكندرية — سيدي بشر</div></div></div>
+      </div>
+      <div class="test-card">
+        <div class="test-quote">"</div>
+        <div class="stars">★★★★★</div>
+        <div class="test-text">شركتنا في المنطقة الصناعية كانت بيها فئران بتخرب البضاعة. الشركة الألمانية حلت المشكلة في ثلاث زيارات ووضعت حواجز وقاية. ممتازين!</div>
+        <div class="test-author"><div class="test-avatar">ك</div><div><div class="test-name">كريم عادل</div><div class="test-loc">10 رمضان — المنطقة الصناعية</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="section-label" style="background:rgba(245,184,0,0.2);color:var(--gold)">اتصل بنا الآن</div>
+        <h2>نحن هنا لمساعدتك</h2>
+        <p>تواصل مع فريقنا المتخصص للحصول على معاينة مجانية وحل فوري لمشكلتك. نعمل في جميع محافظات مصر.</p>
+        
+        <div class="phone-showcase">
+          <div class="phone-label">📞 اتصل بنا الآن — خدمة 24 ساعة</div>
+          <div class="phone-number">
+            <div class="phone-ring"></div>
+            <a href="tel:01110525233">01110525233</a>
+            <div class="phone-ring" style="animation-delay:.5s"></div>
+          </div>
+          <div style="color:rgba(255,255,255,0.6);font-size:13px;margin-top:10px">متاحون 24/7 لخدمتك في جميع أنحاء مصر</div>
+        </div>
+
+        <div class="contact-items">
+          <div class="contact-item">
+            <div class="contact-item-icon">📱</div>
+            <div class="contact-item-text"><strong>واتساب</strong><a href="https://wa.me/201110525233" style="color:rgba(255,255,255,0.8);text-decoration:none">تواصل عبر واتساب</a></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">📍</div>
+            <div class="contact-item-text"><strong>العنوان</strong>نعمل في جميع محافظات مصر</div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">🕐</div>
+            <div class="contact-item-text"><strong>مواعيد العمل</strong>24 ساعة — 7 أيام في الأسبوع</div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">🆓</div>
+            <div class="contact-item-text"><strong>معاينة مجانية</strong>نزورك مجاناً لتقييم المشكلة</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <div class="form-title">🗓️ اطلب معاينة مجانية</div>
+        <form onsubmit="submitForm(event)">
+          <div class="form-group">
+            <label>الاسم الكريم</label>
+            <input type="text" placeholder="اكتب اسمك هنا" required>
+          </div>
+          <div class="form-group">
+            <label>رقم الهاتف</label>
+            <input type="tel" placeholder="01xxxxxxxxx" required>
+          </div>
+          <div class="form-group">
+            <label>المحافظة</label>
+            <select required>
+              <option value="">اختر محافظتك</option>
+              <option>القاهرة</option><option>الجيزة</option><option>الإسكندرية</option>
+              <option>الشرقية</option><option>الدقهلية</option><option>القليوبية</option>
+              <option>المنوفية</option><option>البحيرة</option><option>سوهاج</option>
+              <option>أسيوط</option><option>الأقصر</option><option>أسوان</option>
+              <option>محافظة أخرى</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>نوع المشكلة</label>
+            <select>
+              <option value="">اختر نوع الحشرة</option>
+              <option>صراصير</option><option>نمل (عادي أو أبيض)</option>
+              <option>بق الفراش</option><option>فئران وقوارض</option>
+              <option>ناموس وبعوض</option><option>ذباب</option><option>عناكب</option>
+              <option>أبراص</option><option>براغيث</option><option>أخرى</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>تفاصيل إضافية</label>
+            <textarea placeholder="صف لنا المشكلة بمزيد من التفاصيل..."></textarea>
+          </div>
+          <button type="submit" class="submit-btn">🚀 أرسل الطلب الآن</button>
+        </form>
+        <div class="success-msg" id="successMsg">✅ تم استلام طلبك! سنتصل بك خلال دقائق</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#hero" class="logo" onclick="closePage()">
+          <div class="logo-icon">🐛</div>
+          <div class="logo-text" style="color:#fff">الشركة الألمانية<span>لمكافحة الحشرات في مصر</span></div>
+        </a>
+        <p style="margin-top:14px">رائدة في مكافحة الحشرات والقوارض في مصر بأحدث التقنيات الألمانية ومبيدات مرخصة وفريق متخصص. نخدم جميع محافظات مصر 24/7.</p>
+      </div>
+      <div class="footer-col">
+        <h4>خدماتنا</h4>
+        <ul>
+          <li><a href="#services" onclick="closePage()">▸ مكافحة الصراصير</a></li>
+          <li><a href="#services" onclick="closePage()">▸ مكافحة النمل</a></li>
+          <li><a href="#services" onclick="closePage()">▸ مكافحة البق</a></li>
+          <li><a href="#services" onclick="closePage()">▸ مكافحة الفئران</a></li>
+          <li><a href="#services" onclick="closePage()">▸ مكافحة الناموس</a></li>
+          <li><a href="#services" onclick="closePage()">▸ مكافحة العناكب</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>روابط سريعة</h4>
+        <ul>
+          <li><a href="#hero" onclick="closePage()">▸ الرئيسية</a></li>
+          <li><a href="#why" onclick="closePage()">▸ لماذا نحن؟</a></li>
+          <li><a href="#process" onclick="closePage()">▸ كيف نعمل</a></li>
+          <li><a href="#articles" onclick="closePage()">▸ المقالات</a></li>
+          <li><a href="#testimonials" onclick="closePage()">▸ آراء العملاء</a></li>
+          <li><a href="#contact" onclick="closePage()">▸ اتصل بنا</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>تواصل معنا</h4>
+        <ul>
+          <li><a href="tel:01110525233">📞 01110525233</a></li>
+          <li><a href="https://wa.me/201110525233">💬 واتساب</a></li>
+          <li><a href="#contact" onclick="closePage()">📋 طلب معاينة مجانية</a></li>
+        </ul>
+        <div style="margin-top:16px;background:rgba(245,184,0,0.1);border:1px solid rgba(245,184,0,0.3);border-radius:10px;padding:12px;text-align:center">
+          <div style="color:rgba(255,255,255,0.6);font-size:12px">متاحون على مدار الساعة</div>
+          <div style="color:var(--gold);font-size:20px;font-weight:800">24 / 7</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 <span>الشركة الألمانية لمكافحة الحشرات</span> — جميع الحقوق محفوظة</p>
+      <p>📞 <span>01110525233</span> | مرخصون من وزارة الصحة المصرية</p>
+    </div>
+  </div>
+</footer>
+
+<!-- PEST PAGES OVERLAY -->
+<div class="page-overlay" id="pestPage">
+  <div class="page-nav">
+    <button class="back-btn" onclick="closePage()">← العودة للرئيسية</button>
+    <span class="page-nav-title" id="pestPageTitle"></span>
+  </div>
+  <div id="pestPageContent"></div>
+</div>
+
+<!-- ARTICLE PAGES OVERLAY -->
+<div class="page-overlay" id="articlePage">
+  <div class="page-nav">
+    <button class="back-btn" onclick="closeArticle()">← العودة للمقالات</button>
+    <span class="page-nav-title" id="articlePageTitle"></span>
+  </div>
+  <div id="articlePageContent"></div>
+</div>
+
+<script>
+// ===== PEST DATA =====
+const pests = [
+  {
+    id:'cockroach', name:'مكافحة الصراصير', icon:'🪳',
+    img:'https://images.unsplash.com/photo-1606676539940-927b10616440?w=800&q=80',
+    hero:'https://images.unsplash.com/photo-1606676539940-927b10616440?w=800&q=80',
+    desc:'الصراصير من أخطر الحشرات المنزلية — تنقل أكثر من 50 نوعاً من الأمراض وتتكاثر بسرعة مذهلة',
+    intro:'الصرصار حشرة مزعجة ومدمرة تنتشر في المطابخ والحمامات وشقوق الجدران. تتكاثر بسرعة هائلة؛ أنثى الصرصور تضع ما يصل إلى 30-40 بيضة في كل مرة. في مصر يشيع وجود الصرصور الأمريكي والألماني والصرصور الشرقي في المنازل والمطاعم والمصانع.',
+    dangers:['تنقل أكثر من 50 مرضاً بينها التيفوئيد والكوليرا والإسهال','تلوث الطعام والأسطح بالبكتيريا والفيروسات','تسبب الحساسية والربو خاصة عند الأطفال','تفسد السمعة وتسبب خسائر فادحة للمطاعم','تتكاثر بسرعة مذهلة تجعل الإبادة صعبة بدون متخصص'],
+    signs:['وجود براز الصراصير (نقاط سوداء صغيرة) بالمطبخ','رائحة كريهة مميزة في الأماكن المظلمة','رؤية الصراصير في الليل عند إضاءة الأنوار فجأة','وجود بيض الصراصير (كبسولات بنية) خلف الأثاث','أصوات خشخشة في الخزانات والأدراج ليلاً'],
+    service:'تستخدم الشركة الألمانية أحدث تقنية الجل الألماني (Gel Bait) المستوردة التي تقضي على الصراصير نهائياً من المصدر، بالإضافة إلى الرش الضبابي للأماكن الواسعة. نضمن لك بيئة خالية من الصراصير مع متابعة مجانية.'
+  },
+  {
+    id:'ants', name:'مكافحة النمل', icon:'🐜',
+    img:'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80',
+    hero:'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80',
+    desc:'النمل ينقسم لنوعين: العادي الذي يلوث الطعام والنمل الأبيض الذي يدمر الخشب والأثاث',
+    intro:'النمل من أكثر الحشرات انتشاراً في مصر ويوجد بأنواع مختلفة. النمل العادي يتغذى على السكر والدهون ويلوث المطابخ، بينما النمل الأبيض (الأرضة) هو الأخطر إذ يدمر الأخشاب والأثاث والوثائق بصمت كامل دون أن تشعر حتى يصبح الضرر كبيراً.',
+    dangers:['النمل الأبيض يدمر الأثاث والأبواب والنوافذ الخشبية','يتسبب في خسائر مادية ضخمة قد تصل لآلاف الجنيهات','النمل العادي يلوث الطعام وينقل الجراثيم','يهاجم الأطفال الصغار ويسبب حروقاً وألماً','يصعب التخلص منه بالوسائل المنزلية العادية'],
+    signs:['وجود مسارات من النمل تتجه نحو المطبخ','نشارة الخشب أسفل الأثاث (دليل النمل الأبيض)','أجنحة شفافة مسقوطة قرب النوافذ والأبواب','صوت طقطقة خفية داخل الأخشاب','تورم أو تغير في لون الأسطح الخشبية'],
+    service:'نستخدم مواد خاصة مضادة للنمل الأبيض تحقن مباشرة في مواطن التعشيش، مع رش الحواجز الكيميائية على التربة المحيطة. للنمل العادي نستخدم الطُعم السام الانتقالي الذي يصل إلى الملكة ويقضي على المستعمرة كلياً.'
+  },
+  {
+    id:'bedbugs', name:'مكافحة البق', icon:'🦟',
+    img:'https://images.unsplash.com/photo-1585155770447-2f66e2a397b5?w=800&q=80',
+    hero:'https://images.unsplash.com/photo-1585155770447-2f66e2a397b5?w=800&q=80',
+    desc:'بق الفراش يتغذى على دماء النائمين ليلاً ويسبب حساسية وطفح جلدي مؤلم',
+    intro:'بق الفراش من أصعب الحشرات التخلص منها منزلياً. يختبئ في خيوط المراتب والأثاث وشقوق الجدران نهاراً ويخرج ليلاً ليمتص الدم. لدغاته تسبب حكة شديدة وطفح جلدي وأحياناً تفاعلات تحسسية شديدة. ينتشر بسرعة عبر الملابس والأمتعة والأثاث المستعمل.',
+    dangers:['يتغذى على الدم ويسبب لدغات مؤلمة مع حكة شديدة','يسبب الأرق وقلة النوم مما يؤثر على الإنتاجية','ينقل أمراضاً جلدية وتفاعلات تحسسية','يصعب رؤيته بالعين المجردة ويتكاثر بسرعة','يتحمل درجات الحرارة المتطرفة ويقاوم كثيراً من المبيدات'],
+    signs:['بقع دموية صغيرة على الفراش أو الملابس','بقع صغيرة بنية أو سوداء على المرتبة أو الجدار','لدغات بشكل خطوط أو تجمعات على الجسم','رائحة حلوة كريهة في الغرفة','جلد الحشرة المنسلخ (شبه شفاف) بين طيات المرتبة'],
+    service:'نستخدم معالجة حرارية بالبخار (130°) تقتل البق وبيوضه فوراً، مع رش مبيدات ألمانية متخصصة طويلة الأمد في جميع الشقوق والزوايا. نضمن القضاء الكامل على البق وبيوضه مع متابعة لمدة 3 أشهر.'
+  },
+  {
+    id:'rats', name:'مكافحة الفئران', icon:'🐀',
+    img:'https://images.unsplash.com/photo-1425082661705-1834bfd09dca?w=800&q=80',
+    hero:'https://images.unsplash.com/photo-1425082661705-1834bfd09dca?w=800&q=80',
+    desc:'الفئران تدمر الممتلكات وتنقل أمراضاً خطيرة وتسبب حرائق بقضم الأسلاك الكهربائية',
+    intro:'الفئران والقوارض من أخطر الآفات التي تصيب المنازل والمنشآت في مصر. يمكنها القضم على الأسلاك الكهربائية ومواسير المياه والهياكل الإنشائية، مما يتسبب في أضرار جسيمة. كما تنقل أمراضاً قاتلة كالطاعون والليبتوسبيروزيس وحمى الفئران.',
+    dangers:['تنقل أمراضاً خطيرة كالطاعون والليبتوسبيروزيس وداء السالمونيلا','تقضم الأسلاك الكهربائية مما يتسبب في حرائق المنازل','تلوث الطعام والمياه ببولها وفضلاتها','تتكاثر بسرعة كبيرة — الأنثى تنجب 6-10 صغار كل 3 أسابيع','تدمر الملابس والوثائق والأثاث بالقضم'],
+    signs:['وجود فضلات الفئران (حبوب صغيرة سوداء) في الأركان','أصوات حفر وعدو في الأسقف والجدران ليلاً','رائحة كريهة مميزة في الأماكن المهجورة','علامات قضم على الطعام والأكياس والتمديدات','وجود مسارات من الدهون الداكنة على الجدران'],
+    service:'نستخدم منظومة متكاملة تشمل المصائد الاحترافية والطعوم السامة المتطورة في أماكن آمنة بعيداً عن الأطفال والحيوانات، مع سد جميع منافذ الدخول بمواد مانعة. نوفر متابعة أسبوعية لضمان القضاء التام على الفئران.'
+  },
+  {
+    id:'mosquito', name:'مكافحة الناموس', icon:'🦟',
+    img:'https://images.unsplash.com/photo-1573339050527-bf3e02e97f74?w=800&q=80',
+    hero:'https://images.unsplash.com/photo-1573339050527-bf3e02e97f74?w=800&q=80',
+    desc:'الناموس ينقل الملاريا وحمى الضنك وفيروس غرب النيل ويفسد جودة الحياة',
+    intro:'البعوض (الناموس) من أكثر الحشرات إزعاجاً وخطورة في مصر خاصة في الصيف وقرب المسطحات المائية. ينقل أمراضاً خطيرة كالملاريا وحمى الضنك وفيروس غرب النيل. لدغاته المتكررة تسبب الأرق وتؤثر على جودة الحياة.',
+    dangers:['ينقل الملاريا وحمى الضنك وفيروس غرب النيل','لدغاته تسبب حكة شديدة وتورماً مزعجاً','يسبب الأرق ويؤثر على صحة الأطفال والمرضى','يتكاثر في أي تجمع للمياه ولو صغير','أصوات طنينه المستمرة تسبب إزعاجاً شديداً'],
+    signs:['كثرة اللدغات والحكة خاصة في الصباح الباكر','وجود مياه راكدة قريبة من المكان','سماع أصوات طنين ليلاً','وجود يرقات البعوض في المياه الراكدة','زيادة ملحوظة في أعداد البعوض عند الغروب'],
+    service:'نستخدم الرش الضبابي الخارجي والداخلي بأحدث المبيدات الألمانية المعتمدة، مع معالجة مصادر التكاثر بمواد مضادة لليرقات. نستخدم تقنيات التبخير الكيميائي للمناطق المفتوحة والبساتين والحدائق.'
+  },
+  {
+    id:'flies', name:'مكافحة الذباب', icon:'🪰',
+    img:'https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=800&q=80',
+    hero:'https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=800&q=80',
+    desc:'الذباب ينقل أمراض الجهاز الهضمي ويلوث الطعام بملايين الجراثيم في ثوانٍ',
+    intro:'الذباب من أكثر الحشرات نقلاً للأمراض إذ يستطيع حمل ملايين الجراثيم على جسمه الصغير. ينتقل بسرعة من القمامة والفضلات إلى الطعام والأسطح محدثاً تلوثاً يتسبب في أمراض خطيرة. يُعدّ من أكبر مصادر التلوث في المطاعم والمطابخ.',
+    dangers:['ينقل أكثر من 100 نوع من مسببات الأمراض','يلوث الطعام بجراثيم القيء والإسهال والكوليرا والتيفوئيد','يلحق خسائر اقتصادية فادحة بالمطاعم والمحلات الغذائية','يزيد من فرص التعفن السريع للطعام','تكاثره السريع يجعل المكافحة اليدوية غير مجدية'],
+    signs:['وجود الذباب بكثافة حول المطبخ أو القمامة','بقع صغيرة سوداء على الجدران والأسقف (فضلات الذباب)','يرقات الذباب في الطعام الفاسد أو القمامة','الذباب يحوم باستمرار حول الطعام المكشوف','رائحة كريهة تجذب الذباب من الخارج'],
+    service:'نستخدم تركيبات خاصة بالذباب على شكل طُعم وعقبات ولاصقات احترافية، مع رش داخلي وخارجي بمبيدات تدوم طويلاً. نقدم أيضاً أجهزة إلكترونية متخصصة لأماكن تداول الطعام.'
+  },
+  {
+    id:'spiders', name:'مكافحة العناكب', icon:'🕷️',
+    img:'https://images.unsplash.com/photo-1509706419256-7be23c2aa455?w=800&q=80',
+    hero:'https://images.unsplash.com/photo-1509706419256-7be23c2aa455?w=800&q=80',
+    desc:'بعض العناكب سامة وخطيرة — لدغتها تسبب مضاعفات طبية خطيرة تستوجب التدخل الفوري',
+    intro:'على الرغم من أن معظم العناكب في مصر غير خطيرة، إلا أن بعض الأنواع كالعنكبوت الأرمل الأسود والعنكبوت البني المتناسل لدغاتها خطيرة وقد تستوجب الرعاية الطبية. كذلك تُشكّل خيوط العناكب منظراً غير مرغوب فيه ودليلاً على وجود حشرات أخرى تتغذى عليها.',
+    dangers:['بعض الأنواع كالأرمل الأسود سمها خطير على الجهاز العصبي','لدغاتها تسبب ألماً شديداً واحمراراً وتورماً ونخراً للجلد','تدل كثافتها على وجود حشرات أخرى بالمكان','تسبب هلعاً وخوفاً خاصة لمن يعانون من رهاب العناكب','خيوطها تلوث الأركان والأسقف وتجعل المكان يبدو إهمالاً'],
+    signs:['وجود خيوط عناكب في الأركان والأسقف والأثاث','رؤية العناكب في الليل خاصة في الحمامات والمخازن','وجود كيس بيض دائري أبيض أو رمادي','وجود حشرات ميتة في شباك العناكب','ظهور لدغات مجهولة المصدر على الجسم'],
+    service:'نقوم برش خاص بالعناكب على مداخل المنزل والأركان وجميع أماكن تواجدها مع إزالة الأعشاش ومنع عودتها. نستخدم مبيدات آمنة طويلة الأمد تستمر فعاليتها لعدة أشهر.'
+  },
+  {
+    id:'fleas', name:'مكافحة البراغيث', icon:'🦗',
+    img:'https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?w=800&q=80',
+    hero:'https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?w=800&q=80',
+    desc:'البراغيث تلدغ الإنسان والحيوانات وتنقل أمراضاً خطيرة وقد تسبب أنيميا عند الأطفال',
+    intro:'البراغيث حشرات طفيلية صغيرة جداً تتطفل على الإنسان والحيوانات الأليفة كالكلاب والقطط. تنتشر في المفروشات والسجاد والأرضيات الخشبية. لدغاتها مؤلمة وتسبب حكة شديدة وقد تنقل طفيليات وأمراضاً خطيرة.',
+    dangers:['تنقل الطاعون الدبلي والتيفوس والليشمانيا','لدغاتها تسبب حكة شديدة وتفاعلات تحسسية','تسبب أنيميا عند الأطفال الصغار عند كثرة اللدغات','تتطفل على الحيوانات الأليفة وتضعفها','تتكاثر بسرعة فائقة في السجاد والمفروشات'],
+    signs:['حكة مستمرة في القدمين وأسفل الساقين','رؤية حشرات صغيرة جداً قافزة على الملابس','حيوانك الأليف يحك نفسه باستمرار','وجود بقع سوداء صغيرة على فراء الحيوانات الأليفة','لدغات على شكل نقاط حمراء تظهر مجتمعة'],
+    service:'نعالج المكان بالكامل بما في ذلك السجاد والأثاث والشقوق والحيوانات الأليفة (بمواد آمنة) وجميع مصادر تكاثر البراغيث. نستخدم مبيدات طويلة الأمد تقتل اليرقات والبيض والبالغة في آنٍ واحد.'
+  },
+  {
+    id:'termites', name:'مكافحة النمل الأبيض', icon:'🐛',
+    img:'https://images.unsplash.com/photo-1610986603166-f78428624e76?w=800&q=80',
+    hero:'https://images.unsplash.com/photo-1610986603166-f78428624e76?w=800&q=80',
+    desc:'النمل الأبيض المدمر يأكل الخشب من الداخل بصمت مطبق حتى يصبح الضرر هائلاً',
+    intro:'النمل الأبيض (الأرضة) يُعدّ من أخطر الحشرات التي تصيب المنازل والمنشآت. يعيش في مستعمرات ضخمة تضم الملايين من الأفراد ويهاجم كل ما هو خشبي بصمت تام. قد تمر سنوات دون اكتشافه بينما يدمر الهيكل الداخلي للأبواب والنوافذ والأسقف.',
+    dangers:['يدمر الأثاث والأبواب والنوافذ وهياكل الأسقف الخشبية','يسبب خسائر بعشرات آلاف الجنيهات في الأثاث','خطر انهيار الهياكل الخشبية الحاملة في المباني القديمة','يؤثر على قيمة العقار بشكل كبير','صعب الاكتشاف المبكر ويعمل في الظلام'],
+    signs:['أبواب ونوافذ أصبحت تصدر صوتاً أجوفاً عند الطرق عليها','نشارة خشب رفيعة أسفل الأثاث أو عند القواعد','أجنحة شفافة صغيرة مسقوطة في الأركان في الربيع','تلون أو تورم في الأسطح الخشبية دون سبب واضح','مسارات طينية رفيعة على الجدران أو الأساسات'],
+    service:'نستخدم حقن المواد الكيميائية المضادة للنمل الأبيض مباشرة في مواطن التعشيش وفي التربة المحيطة بالمبنى. نضع حواجز كيميائية دائمة حول الأساسات ونقدم ضماناً لمدة عام كامل.'
+  },
+  {
+    id:'lizards', name:'مكافحة الأبراص', icon:'🦎',
+    img:'https://images.unsplash.com/photo-1504450874802-0ba2bcd9b5ae?w=800&q=80',
+    hero:'https://images.unsplash.com/photo-1504450874802-0ba2bcd9b5ae?w=800&q=80',
+    desc:'الأبراص تثير الذعر وتلوث الطعام وقد تحمل بكتيريا خطيرة خاصة للأطفال',
+    intro:'الأبراص (السحالي المنزلية) شائعة في المنازل المصرية خاصة في الصيف. تتغذى على الحشرات الصغيرة ولكنها تسبب إزعاجاً شديداً وهلعاً، كما أن فضلاتها تلوث الطعام والأسطح. بعض أنواعها قد تحمل بكتيريا السالمونيلا.',
+    dangers:['فضلاتها تلوث الطعام والمناطق المفتوحة','يمكن أن تحمل بكتيريا السالمونيلا وتنقلها للطعام','تسبب هلعاً وخوفاً شديداً خاصة للأطفال والنساء','تسقط على الأشخاص أحياناً مما يسبب صدمة وإصابات','تلوث الطلاء والجدران بفضلاتها البيضاء'],
+    signs:['رؤية أبراص على الجدران والأسقف والمفاتيح الكهربائية','وجود فضلاتها على الجدران والأثاث (بقع سوداء بيضاء)','بيض أبراص دائري صلب خلف الأثاث والصور','أصوات تصدرها خاصة في الليل عند الصيد','كثافة عالية تدل على وجود حشرات كثيرة تتغذى عليها'],
+    service:'نطبق محاليل طاردة للأبراص على مداخل المنزل والجدران والأسقف مع وضع مصائد لاصقة احترافية غير مرئية. نحدد أيضاً مصادر غذائها من الحشرات ونعالجها في آنٍ واحد للقضاء الكامل.'
+  },
+  {
+    id:'scorpions', name:'مكافحة العقارب والحشرات السامة', icon:'🦂',
+    img:'https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=800&q=80',
+    hero:'https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=800&q=80',
+    desc:'العقارب خطر داهم في بعض مناطق مصر — لدغتها قد تكون مميتة وتستوجب التدخل الفوري',
+    intro:'العقارب من أخطر الكائنات التي يمكن مواجهتها في المنازل المصرية خاصة في الصعيد والمناطق الصحراوية والقاهرة الجديدة. تختبئ في الملابس والأحذية والشقوق وتخرج ليلاً. سمها خطير خاصة للأطفال وكبار السن وقد يتطلب علاجاً طبياً عاجلاً.',
+    dangers:['سم بعض أنواع العقارب قاتل للأطفال وكبار السن','لدغتها تسبب ألماً حرقاً شديداً وتشنجات وصعوبة في التنفس','تختبئ في الأحذية والملابس وتلدغ دون تحذير','الوخز الليلي في الفراش من أكثر حالاتها شيوعاً','تتكاثر في المناطق الصحراوية وتدخل المنازل بحثاً عن المياه'],
+    signs:['رؤية عقارب ليلاً قرب الإضاءة أو في الحمام','آثار لدغات مؤلمة صباحاً دون تفسير','وجود منزلك في منطقة صحراوية أو على حافة البناء الجديد','وجود حجارة وأنقاض قريبة يمكنها التخفي فيها','حالات لدغ مسبقة في المنزل أو الجيران'],
+    service:'نقوم بحملة رش شاملة لجميع مداخل المنزل والأحواش والأماكن المحيطة بمبيدات خاصة بالزواحف والعقارب، مع سد جميع الشقوق والمنافذ ووضع حواجز كيميائية وقائية حول المبنى.'
+  },
+  {
+    id:'ticks', name:'مكافحة القراد', icon:'🦠',
+    img:'https://images.unsplash.com/photo-1570483843814-0a52dd0ef00c?w=800&q=80',
+    hero:'https://images.unsplash.com/photo-1570483843814-0a52dd0ef00c?w=800&q=80',
+    desc:'القراد يتطفل على الإنسان والحيوانات وينقل أمراضاً خطيرة كالحمى النزفية وداء لايم',
+    intro:'القراد طفيليات خارجية صغيرة تتعلق بجلد الإنسان والحيوانات لامتصاص الدم. ينتشر في المناطق العشبية والحدائق والغابات وعلى الحيوانات الأليفة. يُعدّ ناقلاً لعدد من الأمراض الخطيرة ومنها الحمى النزفية القرمية الكونغولية التي تنتشر في بعض مناطق مصر.',
+    dangers:['ينقل الحمى النزفية القرمية الكونغولية وهي مرض خطير','ينقل داء لايم وهو مرض جهازي مزمن','يسبب شلل القراد عند التثبت برأس الضحية','يُصعب فصله من الجلد بأمان دون خبرة متخصصة','يهاجم الحيوانات الأليفة ويسبب أنيميا وضعفاً شديداً'],
+    signs:['وجود قراد ملتصق بالجلد بعد التواجد في العشب','حيوانك الأليف يحك نفسه أو يقضم جلده باستمرار','وجود قراد صغير على الملابس بعد المشي في العشب','حمى مجهولة السبب بعد لدغة مشبوهة','وجود بقع حمراء صغيرة مع حلقة حمراء حولها'],
+    service:'نقوم بمعالجة شاملة للحديقة والحشائش والأماكن المحيطة بالمنزل بمبيدات مخصصة للقراد. نقدم أيضاً نصائح للوقاية وطرق التعامل الآمن مع الحيوانات الأليفة للحدّ من انتقال القراد.'
+  }
+];
+
+// ===== ARTICLES DATA =====
+const articles = {
+  article1: {
+    title: '10 طرق فعالة للوقاية من الحشرات في المنزل',
+    content: `
+      <div style="max-width:800px;margin:0 auto;padding:40px 20px;font-family:'Tajawal',sans-serif;direction:rtl">
+        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=800&q=80" style="width:100%;height:300px;object-fit:cover;border-radius:16px;margin-bottom:28px" alt="تنظيف المنزل">
+        <div style="background:#e6f5ec;border-right:4px solid #006633;padding:16px 20px;border-radius:10px;margin-bottom:24px;color:#1a3020;font-size:15px;line-height:1.8">
+          الوقاية خير من العلاج — اتباع هذه النصائح البسيطة يوفر عليك كثيراً من المتاعب والمصاريف
+        </div>
+        <p style="font-size:16px;line-height:1.9;color:#3a5040;margin-bottom:20px">يعاني كثير من المصريين من مشكلة الحشرات في المنازل خاصة في فصل الصيف. لكن مع الاحتياطات الصحيحة يمكنك تقليل احتمالية ظهور الحشرات بشكل كبير جداً.</p>
+        <h3 style="font-size:20px;font-weight:700;color:#0d1f0f;margin:24px 0 12px">1. أغلق مصادر المياه الراكدة</h3>
+        <p style="font-size:15px;line-height:1.8;color:#4a6450;margin-bottom:20px">المياه الراكدة هي البيئة المفضلة لتكاثر البعوض والحشرات الأخرى. احرص على تصريف أي مياه راكدة في الحديقة أو على السطح أو في الصواني تحت الأحواض.</p>
+        <h3 style="font-size:20px;font-weight:700;color:#0d1f0f;margin:24px 0 12px">2. أحكم إغلاق القمامة</h3>
+        <p style="font-size:15px;line-height:1.8;color:#4a6450;margin-bottom:20px">القمامة المكشوفة هي مصدر رئيسي لجذب الصراصير والذباب والفئران. استخدم أكياس محكمة وسلة قمامة بغطاء محكم.</p>
+        <h3 style="font-size:20px;font-weight:700;color:#0d1f0f;margin:24px 0 12px">3. سد الشقوق والثغرات</h3>
+        <p style="font-size:15px;line-height:1.8;color:#4a6450;margin-bottom:20px">افحص جدران مطبخك وحمامك وأسفل الأبواب. أي شق أو ثغرة هي بوابة دخول للحشرات. استخدم السيليكون أو الإسفنج لسدها.</p>
+        <h3 style="font-size:20px;font-weight:700;color:#0d1f0f;margin:24px 0 12px">4. نظافة المطبخ يومياً</h3>
+        <p style="font-size:15px;line-height:1.8;color:#4a6450;margin-bottom:20px">لا تترك بقايا الطعام على الأسطح ليلاً. انظف الموقد والثلاجة من الخلف بانتظام. احفظ الطعام في حاويات محكمة الإغلاق.</p>
+        <div style="background:#fff3cd;border:1px solid #ffc107;border-radius:12px;padding:20px;margin:28px 0">
+          <strong style="color:#856404;font-size:16px">⚠️ تذكر:</strong>
+          <p style="color:#6b5010;font-size:14px;margin-top:8px;line-height:1.7">إذا لاحظت بالفعل وجود حشرات في منزلك، لا تتأخر في طلب المساعدة المتخصصة. كلما تأخرت كلما تكاثرت الحشرات وزادت المشكلة تعقيداً.</p>
+        </div>
+        <div style="background:linear-gradient(135deg,#0d1f0f,#006633);border-radius:16px;padding:28px;text-align:center;color:#fff;margin-top:32px">
+          <h3 style="font-size:22px;font-weight:800;margin-bottom:10px">عندك مشكلة حشرات؟ اتصل بينا دلوقتي!</h3>
+          <p style="color:rgba(255,255,255,0.7);margin-bottom:18px">معاينة مجانية وحل فوري</p>
+          <a href="tel:01110525233" style="background:#f5b800;color:#0d1f0f;font-size:22px;font-weight:900;padding:14px 32px;border-radius:12px;text-decoration:none;display:inline-block">📞 01110525233</a>
+        </div>
+      </div>
+    `
+  },
+  article2: {
+    title: 'الصراصير: 50 مرض تنقلها وكيف تتخلص منها نهائياً',
+    content: `
+      <div style="max-width:800px;margin:0 auto;padding:40px 20px;font-family:'Tajawal',sans-serif;direction:rtl">
+        <img src="https://images.unsplash.com/photo-1606676539940-927b10616440?w=800&q=80" style="width:100%;height:300px;object-fit:cover;border-radius:16px;margin-bottom:28px" alt="صراصير">
+        <div style="background:#ffebee;border-right:4px solid #c62828;padding:16px 20px;border-radius:10px;margin-bottom:24px;color:#6b1a1a;font-size:15px;line-height:1.8">
+          ⚠️ الصراصير ليست مجرد مزعجة — هي خطر حقيقي على صحة أسرتك بالكامل
+        </div>
+        <p style="font-size:16px;line-height:1.9;color:#3a5040;margin-bottom:20px">الصراصير من أكثر الحشرات انتشاراً في مصر وأشدها خطورة. ليس لأنها مزعجة فحسب بل لأنها ناقل فعال لعدد كبير من الأمراض الخطيرة. دراسات علمية أثبتت أن الصرصار الواحد يمكنه حمل أكثر من 50 نوعاً من مسببات الأمراض على جسمه.</p>
+        <h3 style="font-size:20px;font-weight:700;color:#0d1f0f;margin:24px 0 12px">الأمراض التي تنقلها الصراصير</h3>
+        <ul style="list-style:none;padding:0">
+          ${['التيفوئيد','الكوليرا','الإسهال الجرثومي','الدوسنتاريا','التسمم الغذائي','التهاب الكبد أ','الجدري الكاذب','الالتهاب الرئوي','الحساسية والربو'].map(d=>`<li style="display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #e8f0ea;font-size:15px;color:#4a6450"><span style="background:#c62828;color:#fff;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;flex-shrink:0">!</span>${d}</li>`).join('')}
+        </ul>
+        <div style="background:linear-gradient(135deg,#0d1f0f,#006633);border-radius:16px;padding:28px;text-align:center;color:#fff;margin-top:32px">
+          <h3 style="font-size:22px;font-weight:800;margin-bottom:10px">اتصل بالشركة الألمانية الآن!</h3>
+          <p style="color:rgba(255,255,255,0.7);margin-bottom:18px">نضمن القضاء النهائي على الصراصير مع ضمان 3 أشهر</p>
+          <a href="tel:01110525233" style="background:#f5b800;color:#0d1f0f;font-size:22px;font-weight:900;padding:14px 32px;border-radius:12px;text-decoration:none;display:inline-block">📞 01110525233</a>
+        </div>
+      </div>
+    `
+  },
+  article3: {
+    title: 'الفرق بين المبيدات الكيميائية والعضوية',
+    content: `
+      <div style="max-width:800px;margin:0 auto;padding:40px 20px;font-family:'Tajawal',sans-serif;direction:rtl">
+        <img src="https://images.unsplash.com/photo-1563906267088-b029e7101114?w=800&q=80" style="width:100%;height:300px;object-fit:cover;border-radius:16px;margin-bottom:28px" alt="مبيدات">
+        <p style="font-size:16px;line-height:1.9;color:#3a5040;margin-bottom:24px">يسأل كثير من العملاء عن الفرق بين المبيدات الكيميائية والعضوية وأيها أفضل وأأمن لاستخدامه في المنازل.</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:32px">
+          <div style="background:#e6f5ec;border-radius:12px;padding:20px;border:1px solid #a8d5b5">
+            <h4 style="color:#006633;font-size:17px;font-weight:700;margin-bottom:12px">✅ المبيدات العضوية</h4>
+            <ul style="list-style:none;padding:0;font-size:14px;color:#2d5a3d;line-height:2">
+              <li>▸ آمنة على الأطفال والحيوانات</li>
+              <li>▸ صديقة للبيئة</li>
+              <li>▸ لا رائحة كريهة قوية</li>
+              <li>▸ يمكن العودة للمنزل فوراً</li>
+              <li>✗ أبطأ في النتائج</li>
+              <li>✗ تحتاج تكراراً أكثر</li>
+            </ul>
+          </div>
+          <div style="background:#fff8e1;border-radius:12px;padding:20px;border:1px solid #ffe082">
+            <h4 style="color:#e65100;font-size:17px;font-weight:700;margin-bottom:12px">⚡ المبيدات الكيميائية</h4>
+            <ul style="list-style:none;padding:0;font-size:14px;color:#5d2a00;line-height:2">
+              <li>▸ نتائج سريعة وفورية</li>
+              <li>▸ أكثر فعالية للحالات الشديدة</li>
+              <li>▸ تدوم فترة أطول</li>
+              <li>▸ أرخص في الغالب</li>
+              <li>✗ تستلزم مغادرة المنزل مؤقتاً</li>
+              <li>✗ تحتاج احتياطات خاصة</li>
+            </ul>
+          </div>
+        </div>
+        <div style="background:#e6f5ec;border-right:4px solid #006633;padding:16px 20px;border-radius:10px;margin-bottom:28px;color:#1a3020;font-size:15px;line-height:1.8">
+          <strong>الشركة الألمانية</strong> تستخدم مزيجاً ذكياً من الاثنين حسب طبيعة كل حالة — نختار الأفضل والأأمن لأسرتك تحديداً.
+        </div>
+        <div style="background:linear-gradient(135deg,#0d1f0f,#006633);border-radius:16px;padding:28px;text-align:center;color:#fff;margin-top:32px">
+          <h3 style="font-size:22px;font-weight:800;margin-bottom:10px">استشر خبراءنا مجاناً</h3>
+          <p style="color:rgba(255,255,255,0.7);margin-bottom:18px">نختار المبيد الأنسب لحالتك تحديداً</p>
+          <a href="tel:01110525233" style="background:#f5b800;color:#0d1f0f;font-size:22px;font-weight:900;padding:14px 32px;border-radius:12px;text-decoration:none;display:inline-block">📞 01110525233</a>
+        </div>
+      </div>
+    `
+  }
+};
+
+// ===== RENDER SERVICES =====
+function renderServices() {
+  const grid = document.getElementById('servicesGrid');
+  grid.innerHTML = pests.map(p => `
+    <div class="service-card" onclick="openPest('${p.id}')">
+      <img src="${p.img}" alt="${p.name}" class="service-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=400&q=60'">
+      <div class="service-body">
+        <div class="service-icon">${p.icon}</div>
+        <div class="service-name">${p.name}</div>
+        <div class="service-desc">${p.desc}</div>
+        <button class="service-btn">اعرف أكثر ←</button>
+      </div>
+    </div>
+  `).join('');
+}
+
+// ===== PEST PAGE =====
+function openPest(id) {
+  const p = pests.find(x => x.id === id);
+  if (!p) return;
+  document.getElementById('pestPageTitle').textContent = p.name;
+  document.getElementById('pestPageContent').innerHTML = `
+    <div class="pest-hero">
+      <img src="${p.hero}" alt="${p.name}" onerror="this.src='https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800&q=60'">
+      <div class="pest-hero-overlay"></div>
+      <div class="pest-hero-content">
+        <div class="pest-hero-title">${p.icon} ${p.name}</div>
+        <div class="pest-hero-sub">${p.desc}</div>
+      </div>
+    </div>
+    <div class="pest-content">
+      <div class="pest-intro">${p.intro}</div>
+      
+      <div class="pest-section-title">⚠️ أضرار ${p.name.replace('مكافحة ','')}</div>
+      <div class="danger-grid">
+        ${p.dangers.map(d => `
+          <div class="danger-item">
+            <div class="danger-icon">⚠️</div>
+            <div class="danger-text">${d}</div>
+          </div>
+        `).join('')}
+      </div>
+      
+      <div class="pest-section-title">🔍 علامات وجود ${p.name.replace('مكافحة ','')}</div>
+      <ul class="signs-list">
+        ${p.signs.map(s => `<li>${s}</li>`).join('')}
+      </ul>
+      
+      <div class="pest-section-title">🛠️ كيف نحل مشكلتك</div>
+      <div style="background:var(--green3);padding:20px 24px;border-radius:12px;border-right:4px solid var(--green);margin-bottom:32px;font-size:15px;line-height:1.9;color:#2d5a3d">${p.service}</div>
+      
+      <div class="pest-cta">
+        <h3>🚨 لا تتأخر! تواصل معنا الآن</h3>
+        <p>كلما تأخرت في التعامل مع المشكلة، كلما تفاقمت وزادت صعوبة الحل. اتصل بنا الآن للحصول على معاينة مجانية وحل فوري.</p>
+        <a href="tel:01110525233" class="cta-phone">📞 01110525233</a>
+        <br>
+        <a href="https://wa.me/201110525233" style="color:rgba(255,255,255,0.7);font-size:15px;text-decoration:none;margin-top:8px;display:inline-block">أو تواصل عبر واتساب ←</a>
+      </div>
+    </div>
+  `;
+  const overlay = document.getElementById('pestPage');
+  overlay.classList.add('active');
+  overlay.scrollTop = 0;
+  document.body.style.overflow = 'hidden';
+}
+
+function closePage() {
+  document.getElementById('pestPage').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+// ===== ARTICLE PAGE =====
+function openArticle(id) {
+  const a = articles[id];
+  if (!a) return;
+  document.getElementById('articlePageTitle').textContent = a.title;
+  document.getElementById('articlePageContent').innerHTML = a.content;
+  const overlay = document.getElementById('articlePage');
+  overlay.classList.add('active');
+  overlay.scrollTop = 0;
+  document.body.style.overflow = 'hidden';
+}
+
+function closeArticle() {
+  document.getElementById('articlePage').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+// ===== FORM SUBMIT =====
+function submitForm(e) {
+  e.preventDefault();
+  const btn = e.target.querySelector('.submit-btn');
+  btn.textContent = '⏳ جاري الإرسال...';
+  btn.disabled = true;
+  setTimeout(() => {
+    btn.textContent = '✅ تم الإرسال!';
+    document.getElementById('successMsg').style.display = 'block';
+    e.target.reset();
+    setTimeout(() => {
+      btn.textContent = '🚀 أرسل الطلب الآن';
+      btn.disabled = false;
+      document.getElementById('successMsg').style.display = 'none';
+    }, 4000);
+  }, 1500);
+}
+
+// ===== NAVBAR =====
+function toggleMenu() {
+  document.getElementById('navLinks').classList.toggle('open');
+}
+function closeMenu() {
+  document.getElementById('navLinks').classList.remove('open');
+}
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+});
+
+// ===== PARTICLES =====
+function createParticles() {
+  const container = document.getElementById('particles');
+  for (let i = 0; i < 20; i++) {
+    const p = document.createElement('div');
+    p.className = 'particle';
+    const size = Math.random() * 30 + 10;
+    p.style.cssText = `
+      width:${size}px;height:${size}px;
+      left:${Math.random()*100}%;
+      animation-duration:${Math.random()*15+8}s;
+      animation-delay:${Math.random()*8}s;
+    `;
+    container.appendChild(p);
+  }
+}
+
+// ===== INTERSECTION OBSERVER =====
+function initAnimations() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, {threshold: 0.1});
+  document.querySelectorAll('.feature-card,.service-card,.article-card,.test-card,.step').forEach(el => {
+    el.style.cssText += 'opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease';
+    observer.observe(el);
+  });
+}
+
+// ===== INIT =====
+document.addEventListener('DOMContentLoaded', () => {
+  renderServices();
+  createParticles();
+  setTimeout(initAnimations, 100);
+});
+</script>
+</body>
+</html>
